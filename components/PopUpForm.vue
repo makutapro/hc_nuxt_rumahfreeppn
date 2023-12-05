@@ -105,7 +105,7 @@
             formData.append('utm_source', this.utm_source)
             formData.append('utm_medium', this.utm_medium)
             formData.append('utm_campaign', this.utm_campaign)
-            formData.append('VerifiedStatus', '1') 
+            formData.append('VerifiedStatus', '0') 
               
               let config = {
               headers: {

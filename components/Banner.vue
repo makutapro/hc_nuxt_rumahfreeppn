@@ -3,7 +3,7 @@
         <!-- <div class="d-none d-md-none d-lg-block"> -->
         <div class="d-none d-md-block">
             <img :src="bannerDesktop" class="img-fluid w-100" alt="banner harvest city">
-            <div class="container-md">
+            <!-- <div class="container-md">
                 <div class="container over-text mt-3 mt-md-0 w-100">
                     <div class="row">
                         <div class="col-12 col-md-6 text-center text-md-start">
@@ -18,12 +18,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="d-block d-md-none">
             <img :src="bannerMobile" class="img-fluid w-100" alt="banner harvest city">
-            <div class="over-text mt-3 mt-md-0">
+            <!-- <div class="over-text mt-3 mt-md-0">
                 <div class="row">
                     <div class="col-12 text-center">
                         <h1 class="h1">PERUMAHAN EKSKLUSIF<br>FASILITAS TERLENGKAP</h1>
@@ -34,7 +34,7 @@
                         <p><i class="bi bi-check2-circle text-success me-2"></i>Trendsetter perumahan di koridor Cibubur</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 </template>
@@ -51,17 +51,17 @@ export default {
         this.$axios.get('https://admharvest.harvestcity.co.id/api/get_banner?id=15')
         .then((response) => {
             if (response.data.data == null) {
-                this.bannerDesktop = require('~/assets/images/banner/banner.webp')
-                this.bannerMobile = require('~/assets/images/banner/banner-mobile.webp')
+                this.bannerDesktop = require('~/assets/images/banner/freeppn.webp')
+                this.bannerMobile = require('~/assets/images/banner/freeppn_mobile.webp')
             }
             else {
-                this.bannerDesktop = response.data.data.banner_desktop ?? require('~/assets/images/banner/banner.webp')
-                this.bannerMobile = response.data.data.banner_mobile ?? require('~/assets/images/banner/banner-mobile.webp')
+                this.bannerDesktop = response.data.data.banner_desktop ?? require('~/assets/images/banner/freeppn.webp')
+                this.bannerMobile = response.data.data.banner_mobile ?? require('~/assets/images/banner/freeppn_mobile.webp')
             }
         })
         .catch((error) => {
-            this.bannerDesktop = require('~/assets/images/banner/banner.webp')
-            this.bannerMobile = require('~/assets/images/banner/banner-mobile.webp')
+            this.bannerDesktop = require('~/assets/images/banner/freeppn.webp')
+            this.bannerMobile = require('~/assets/images/banner/freeppn_mobile.webp')
         })
     }
 }

@@ -26,22 +26,22 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-md-6 mt-2">
+                                <div class="col-12 col-md-9 mt-2 mx-auto text-center">
                                     <input type="text" class="form-control" v-model="form.nama" id="nama" placeholder="NAMA">
                                 </div>
-                                <div class="col-12 col-md-6 mt-2">
-                                    <input type="email" class="form-control" v-model="form.email" id="email" placeholder="EMAIL ANDA">
-                                </div>
-                                <div class="col-12 col-md-6 mt-2">
+                                <div class="col-12 col-md-9 mt-2 mx-auto text-center">
                                     <input type="number" class="form-control" v-model="form.hp" id="hp" placeholder="NOMOR WHATSAPP">
                                 </div>
-                                <div class="col-12 col-md-6 mt-2">
+                                <div class="col-12 col-md-9 mt-2 mx-auto text-center">
+                                    <input type="email" class="form-control" v-model="form.email" id="email" placeholder="EMAIL ANDA">
+                                </div>
+                                <!-- <div class="col-12 col-md-6 mt-2">
                                     <select v-model="form.message" class="form-control form-select">
                                         <option value='' selected disabled>PILIH TIPE RUMAH</option>
                                         <option value="SANVITALIA">SANVITALIA</option>
                                         <option value="SOLANDRA">SOLANDRA</option>
                                     </select>
-                                </div>
+                                </div> -->
                                 <div class="col-12 mt-3">
                                     <small class="fst-italic">*Kami tidak memberikan data anda ke pihak manapun</small>
                                 </div>
@@ -72,22 +72,22 @@
                                             {{  infoError }}
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 mt-2">
+                                    <div class="col-12 col-md-10 mt-2">
                                         <input type="text" class="form-control" v-model="form.nama" id="nama" placeholder="NAMA">
                                     </div>
-                                    <div class="col-12 col-md-6 mt-2">
-                                        <input type="email" class="form-control" v-model="form.email" id="email" placeholder="EMAIL ANDA">
-                                    </div>
-                                    <div class="col-12 col-md-6 mt-2">
+                                    <div class="col-12 col-md-10 mt-2">
                                         <input type="number" class="form-control" v-model="form.hp" id="hp" placeholder="NOMOR WHATSAPP">
                                     </div>
-                                    <div class="col-12 col-md-6 mt-2">
+                                    <div class="col-12 col-md-10 mt-2">
+                                        <input type="email" class="form-control" v-model="form.email" id="email" placeholder="EMAIL ANDA">
+                                    </div>
+                                    <!-- <div class="col-12 col-md-6 mt-2">
                                         <select v-model="form.message" class="form-control form-select">
                                             <option value='' selected disabled>PILIH TIPE RUMAH</option>
                                             <option value="SANVITALIA">SANVITALIA</option>
                                             <option value="SOLANDRA">SOLANDRA</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                     <div class="col-12 mt-3">
                                         <small class="fst-italic">*Kami tidak memberikan data anda ke pihak manapun</small>
                                     </div>
@@ -111,7 +111,7 @@
           nama: '',
           email: '',
           hp: '',
-          message: '',
+        //   message: '',
         },
       
         utm_source : '',
@@ -143,7 +143,7 @@
       onSubmit(event) {
          event.preventDefault()
 
-        if (this.form.nama == '' || this.form.email == '' || this.form.hp == '' || this.form.message == '') {
+        if (this.form.nama == '' || this.form.email == '' || this.form.hp == '') {
             this.infoError = 'Form harus diisi semua'
             return
         }
@@ -152,7 +152,7 @@
             formData.append('NamaProspect', this.form.nama)
             formData.append('Hp', this.form.hp)
             formData.append('EmailProspect', this.form.email)
-            formData.append('Message', this.form.message)
+            // formData.append('Message', this.form.message)
             formData.append('KodePT', 'DR')
             formData.append('KodeProject', 'HC')
             formData.append('Campaign', 'Sakura Indica')
@@ -163,7 +163,7 @@
             // formData.append('Campaign', '')
             // formData.append('KodePT', 'MKT')
             // formData.append('KodeProject', 'TEST')
-            formData.append('VerifiedStatus', '1')
+            formData.append('VerifiedStatus', '0')
 
             let config = {
                 headers: {

@@ -17,11 +17,11 @@ export default {
             this.promoImage = response.data.data
 
             if (this.promoImage == null) {
-                this.promoImage = require('~/assets/images/promo/banner.webp')
+                this.promoImage = require('~/assets/images/promo/promo-sakura-indica.webp')
             }
         })
         .catch((error) => {
-            this.promoImage = require('~/assets/images/promo/banner.webp')
+            this.promoImage = require('~/assets/images/promo/promo-sakura-indica.webp')
         })
     }
 }
